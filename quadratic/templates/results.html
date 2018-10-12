@@ -1,0 +1,20 @@
+<h1>Квадратное уравнение a*x*x + b*x + c = 0</h1>
+<ul>
+	<li>a = {{ a }}</li>
+    {% if a_err %}{{ a_err }}{% endif %}
+	<li>b = {{ b }}</li>
+	{% if b_err %}{{ b_err }}{% endif %}
+	<li>c = {{ c }}</li>
+	{% if c_err %}{{ c_err }}{% endif %}
+</ul>
+{% if not a_err and not b_err and not c_err %}
+	<h1>Решение квадратного уравнения:</h1>
+	{% if not res_err %}
+		<ul>
+			<li>x1 = {{ x1 }}</li>
+			<li>x2 = {{ x2 }}</li>
+		</ul>
+	{% else %}
+	<h3>{{ res_err }}</h3>
+	{% endif %}
+{% endif %}
